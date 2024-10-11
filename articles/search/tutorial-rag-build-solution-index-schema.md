@@ -37,12 +37,31 @@ In conversational search, LLMs compose the response that the user sees, not the 
 
 ### Organized around chunks
 
-When LLMs generate a response, they operate on chunks of content for message inputs, and while they need to know where the chunk came from for citation purposes, what matters most is the quality of message inputs and its relevance to the user's question. Whether the chunks come from one document or a thousand, the LLM ingests the information or *grounding data*, and formulates the response using instructions provided in a system prompt.
-
-Chunks are the focus of the schema, and each chunk is the defining element of a search document in a RAG pattern. You can think of your index as a large collection of chunks, as opposed to traditional search documents that probably have more structure, such as fields containing uniform content for a name, descriptions, categories, and addresses.
+* chunks
+  * main part of the schema
+  * == defining element of a search document | RAG pattern
+  * uses
+    * by LLMs, -- to generate a -- response
+    * for message inputs /
+      * important information
+        * origin of the chunk
+          * == where it comes from
+          * Reason: 👁️citation purposes👁️
+        * quality of it
+        * relevance to user's question
+  * vs traditional search documents
+    * traditional probably have more structure
+      * _Example:_ fields / contain uniform content for a name, descriptions, categories ..
+* index
+  * == large collection of chunks
+* how does LLM generate the response?
+  * 1 or thousand documents come -- to form -- chunk
+  * instructions / provided | system prompt
+  * LLM take the chunk & those instructions --- to generate the -- response
 
 ### Enhanced with generated data
 
+* TODO:
 In this tutorial, sample data consists of PDFs and content from the [NASA Earth Book](https://www.nasa.gov/ebooks/earth/). This content is descriptive and informative, with numerous references to geographies, countries, and areas across the world. All of the textual content is captured in chunks, but recurring instances of place names create an opportunity for adding structure to the index. Using skills, it's possible to recognize entities in the text and capture them in an index for use in queries and filters. In this tutorial, we include an [entity recognition skill](cognitive-search-skill-entity-recognition-v3.md) that recognizes and extracts location entities, loading it into a searchable and filterable `locations` field. Adding structured content to your index gives you more options for filtering, improved relevance, and more focused answers.
 
 ### Parent-child fields in one or two indexes?
