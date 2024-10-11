@@ -13,24 +13,59 @@ ms.date: 10/08/2024
 
 # What's Azure AI Search?
 
-Azure AI Search ([formerly known as "Azure Cognitive Search"](whats-new.md#new-service-name)) provides secure information retrieval at scale over user-owned content in traditional and generative AI search applications.
-
-Information retrieval is foundational to any app that surfaces text and vectors. Common scenarios include catalog or document search, data exploration, and increasingly feeding query results to prompts based on your proprietary grounding data for conversational and copilot search. When you create a search service, you work with the following capabilities:
-
-+ A search engine for [vector search](vector-search-overview.md) and [full text](search-lucene-query-architecture.md) and [hybrid search](hybrid-search-overview.md) over a search index 
-+ Rich indexing with [integrated data chunking and vectorization](vector-search-integrated-vectorization.md), [lexical analysis](search-analyzers.md) for text, and [optional applied AI](cognitive-search-concept-intro.md) for content extraction and transformation
-+ Rich query syntax for [vector queries](vector-search-how-to-query.md), text search, [hybrid queries](hybrid-search-how-to-query.md), fuzzy search, autocomplete, geo-search and others
-+ Relevance and query performance tuning with [semantic ranking](semantic-search-overview.md), [scoring profiles](index-add-scoring-profiles.md), [quantization for vector queries](vector-search-how-to-configure-compression-storage.md), and parameters for controlling query behaviors at runtime 
-+ Azure scale, security, and reach
-+ Azure integration at the data layer, machine learning layer, Azure AI services and Azure OpenAI
+* [formerly known as "Azure Cognitive Search"](whats-new.md#new-service-name)
+* provide
+  * secure information retrieval over user-owned content | search applications 
+    * types
+      * traditional &
+      * generative AI 
+    * / surfaces text & vectors
+* uses
+  * catalog or document search,
+  * data exploration,
+  * feeding query results -- to -- prompts / -- based on -- your proprietary grounding data for conversational and copilot search
+* if you create a search service -> used capabilities
+  * search engine | search index -- for --
+    * [vector search](vector-search-overview.md)
+    * [full text](search-lucene-query-architecture.md)
+    * [hybrid search](hybrid-search-overview.md) 
+  * Rich indexing with
+    * for text
+      * [integrated data chunking and vectorization](vector-search-integrated-vectorization.md),
+      * [lexical analysis](search-analyzers.md) ,
+    * for content extraction & transformation  
+      * [optional applied AI](cognitive-search-concept-intro.md)
+  * Rich query syntax for
+    * [vector queries](vector-search-how-to-query.md),
+    * text search,
+    * [hybrid queries](hybrid-search-how-to-query.md),
+    * fuzzy search,
+    * autocomplete,
+    * geo-search
+    * ...
+  * Relevance &
+    * query performance tuning with [semantic ranking](semantic-search-overview.md), [scoring profiles](index-add-scoring-profiles.md), [quantization for vector queries](vector-search-how-to-configure-compression-storage.md)
+    * query behaviors | runtime -- via -- controlling parameters 
+  * Azure scale, security, and reach
+  * Azure integration |
+    * data layer,
+    * machine learning layer,
+    * Azure AI services
+    * Azure OpenAI
 
 > [!div class="nextstepaction"]
 > [Create a search service](search-create-service-portal.md)
 
-Architecturally, a search service sits between the external data stores that contain your un-indexed data, and your client app that sends query requests to a search index and handles the response.
+* Architecturally
+  * place between
+    * external data stores / contain your un-indexed data, &
+    * your client app /
+      * sends query requests -- to a -- search index
+      * handles the response
 
 ![Azure AI Search architecture](media/search-what-is-azure-search/azure-search.svg "Azure AI Search architecture")
 
+* TODO:
 In your client app, the search experience is defined using APIs from Azure AI Search, and can include relevance tuning, semantic ranking, autocomplete, synonym matching, fuzzy matching, pattern matching, filter, and sort.
 
 Across the Azure platform, Azure AI Search can integrate with other Azure services in the form of *indexers* that automate data ingestion/retrieval from Azure data sources, and *skillsets* that incorporate consumable AI from Azure AI services, such as image and natural language processing, or custom AI that you create in Azure Machine Learning or wrap inside Azure Functions.
