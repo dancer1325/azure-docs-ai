@@ -16,7 +16,8 @@ recommendations: false
 
 # Quickstart: Get started using GPT-35-Turbo and GPT-4 with Azure OpenAI Service
 
-Use this article to get started using Azure OpenAI.
+* goal
+  * get started -- using -- Azure OpenAI
 
 ::: zone pivot="programming-language-studio"
 
